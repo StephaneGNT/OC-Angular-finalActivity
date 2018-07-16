@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>My new post</h1>
+
+  <form [formGroup]="newPostForm" (ngSubmit)="onSubmitForm()">
+    <div class="form-group">
+      <label for="title">Titre</label>
+      <input type="text" id="title" class="form-control" formControlName="title">
+    </div>
+
+    <br/>
+
+    <div class="form-group">
+      <label for="content">Contenu</label>
+      <input type="text" id="content" class="form-control" formControlName="content">
+    </div>
+
+    <br/>
+
+    <button type="submit" class="btn" [disabled]="newPostForm.invalid">Add</button>
+    <a [routerLink]="['/postlist']" style="color:black"><button class="btn">Cancel</button></a>
+  </form>
+
+</div>
